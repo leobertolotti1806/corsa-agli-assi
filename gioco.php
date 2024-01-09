@@ -30,7 +30,9 @@
         </section>
     </main>
 
-    <img id="mazzo" src="./img/dorso.JPG">
+    <form action="./genera.php">
+        <button id="mazzo"></button>
+    </form>
     <img id="scoperta" src="./img/bg_s1.gif">
 
     <div id="giocatori">
