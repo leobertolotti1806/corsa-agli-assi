@@ -1,0 +1,43 @@
+main{
+    display: flex;
+    padding: 10px;
+    width: 450px;
+    border: 3px green solid;
+}
+
+#colonna{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+img{
+    width: 60px;
+    height: 90px;
+    border: 2px black solid;
+    border-radius: 8px;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+    background-color: beige;
+}
+
+#mazzo , #scoperta{
+    position: fixed;
+    width: 100px;
+    height: 150px;
+    bottom: 10vh;
+    right: 50px;
+    cursor: pointer;
+}
+
+#scoperta{
+    bottom: 30vh;
+}
