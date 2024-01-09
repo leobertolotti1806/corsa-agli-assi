@@ -18,6 +18,11 @@ img{
     border-radius: 8px;
 }
 
+main{
+    position: absolute;
+    top: 100px;
+    justify-self: flex-start;
+}
 
 body{
     display: flex;
@@ -39,5 +44,57 @@ body{
 }
 
 #scoperta{
-    bottom: 30vh;
+    bottom: 300px;
+}
+
+#gioco{
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#gioco > img{
+    position: absolute;
+    top: 105%;
+    left: 10%;
+    transition: top 1s;
+}
+
+#gioco > img:nth-child(1){left: 10%;}
+#gioco > img:nth-child(2){left: 32.5%;}
+#gioco > img:nth-child(3){left: 55%;}
+#gioco > img:nth-child(4){left: 77.5%;}
+
+#giocatori{
+    position: absolute;
+    top: 110px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+}
+
+#giocatori > div{
+    display: flex;
+    flex-direction: column;
+}
+
+#giocatori > div > b{
+    width: 100%;
+    text-align: center;
+}
+
+#mazzo{
+    animation: pulse alternate-reverse infinite ease-in-out 2s;
+    box-shadow: 0px 0px 10px black;
+}
+
+#mazzo:hover{
+    animation-play-state: paused;
+}
+
+@keyframes pulse {
+    from{transform: scale(1);}
+    to{transform: scale(1.3);}
 }

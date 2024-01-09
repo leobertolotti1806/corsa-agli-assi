@@ -1,23 +1,22 @@
 let input = document.querySelectorAll("input");
 let form = document.querySelector("form");
-let semi = ["fiori", "cuori", "quadri", "picche"]
 
 form.addEventListener("submit", function (e) {
-    for (let i = 0; i < input.length; i++) {
-        if (input[i].value == "") {
-            e.preventDefault();
-            alert("Inserisci nome " + semi[i]);
-            break;
-        }
-    }
+    let i = 0;
 
-    if (input[0].value == input[1].value
+    while (i < input.length && input[i].value != "")
+        i++;
+
+    if (i < input.length) {
+        e.preventDefault();
+        alert("Inserisci nome " + ["fiori", "cuori", "quadri", "picche"][i]);
+    } else if (input[0].value == input[1].value
         || input[1].value == input[2].value
         || input[2].value == input[3].value
         || input[0].value == input[3].value
         || input[1].value == input[3].value
         || input[0].value == input[2].value) {
-        alert("Non mettere nomi uguali!");
+        alert("Non mettere nomi diversi!");
         e.preventDefault();
     }
 });
