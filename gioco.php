@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <?php var_dump($_POST);
+    echo "<br>";
+    #var_dump($_POST["carteEstratte"]); ?>
     <header>
         <h1>Corsa agli assi</h1>
     </header>
@@ -30,27 +33,58 @@
         </section>
     </main>
 
-    <form action="./genera.php">
-        <button id="mazzo"></button>
+    <form action="./genera.php" method="POST">
+        <?php
+        $value = "";
+        #COMUNICAZIONE TRAMITE VALUE DEL BOTTONE
+        if (!isset($_POST["data"])) {
+            $nomiGiocatori = array(
+                "fiori" => $_POST["nomeGiocatoreFiori"],
+                "cuori" => $_POST["nomeGiocatoreCuori"],
+                "quadri" => $_POST["nomeGiocatoreQuadri"],
+                "picche" => $_POST["nomeGiocatorePicche"]
+            );
+
+            $value = json_encode([
+                "carteEstratte" => array(),
+                "nomiGiocatori" => $nomiGiocatori
+            ]);
+        } else {
+            $nomiGiocatori = json_encode($_POST["nomiGiocatori"]);
+            $value = json_encode([
+                "carteEstratte" => $_POST["carteEstratte"],
+                "nomiGiocatori" => $nomiGiocatori
+            ]);
+        }
+        ?>
+        <button id="mazzo" name="data" value=<?= $value ?>></button>
     </form>
     <img id="scoperta" src="./img/bg_s1.gif">
 
     <div id="giocatori">
         <div>
             <img src="./img/bg_c1.gif">
-            <b><?= $_POST["nomeGiocatoreFiori"] ?></b>
+            <b>
+                <?= $nomiGiocatori["fiori"] ?>
+            </b>
         </div>
         <div>
             <img src="./img/bg_h1.gif">
-            <b><?= $_POST["nomeGiocatoreCuori"] ?></b>
+            <b>
+                <?= $nomiGiocatori["cuori"] ?>
+            </b>
         </div>
         <div>
             <img src="./img/bg_d1.gif">
-            <b><?= $_POST["nomeGiocatoreQuadri"] ?></b>
+            <b>
+                <?= $nomiGiocatori["quadri"] ?>
+            </b>
         </div>
         <div>
             <img src="./img/bg_s1.gif">
-            <b><?= $_POST["nomeGiocatorePicche"] ?></b>
+            <b>
+                <?= $nomiGiocatori["picche"] ?>
+            </b>
         </div>
     </div>
 
