@@ -39,6 +39,8 @@
         $value = "";
         #COMUNICAZIONE TRAMITE VALUE DEL BOTTONE
         if (isset($_POST["nomeGiocatoreFiori"])) {
+            /* CODICE DA ESEGUIRE LA PRIMA VOLTA CHE VIENE APERTA LA PAGINA */
+            /* ovvero la prima volta dopo aver inserito i nomi */
             $nomiGiocatori = array(
                 "fiori" => $_POST["nomeGiocatoreFiori"],
                 "cuori" => $_POST["nomeGiocatoreCuori"],
@@ -51,6 +53,8 @@
                 "nomiGiocatori" => $nomiGiocatori
             ]);
         } else {
+            /* CODICE DA ESEGUIRE TUTTE LE VOLTE CHE LA PAGINA VIENE APERTA */
+            /* tranne la prima volta */
             $nomiGiocatori = json_decode($_POST["nomiGiocatori"]);
 
             $nomiGiocatori = array(
