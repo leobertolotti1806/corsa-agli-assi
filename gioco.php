@@ -10,10 +10,11 @@
     <title>Gioco</title>
 </head>
 
-<body>
-    <?php var_dump($_POST);
+<body><!-- 
+    <?php
+    var_dump($_POST);
     echo "<br>";
-    #var_dump($_POST["carteEstratte"]); ?>
+    ?> -->
     <header>
         <h1>Corsa agli assi</h1>
     </header>
@@ -37,7 +38,7 @@
         <?php
         $value = "";
         #COMUNICAZIONE TRAMITE VALUE DEL BOTTONE
-        if (!isset($_POST["data"])) {
+        if (isset($_POST["nomeGiocatoreFiori"])) {
             $nomiGiocatori = array(
                 "fiori" => $_POST["nomeGiocatoreFiori"],
                 "cuori" => $_POST["nomeGiocatoreCuori"],
@@ -50,7 +51,15 @@
                 "nomiGiocatori" => $nomiGiocatori
             ]);
         } else {
-            $nomiGiocatori = json_encode($_POST["nomiGiocatori"]);
+            $nomiGiocatori = json_decode($_POST["nomiGiocatori"]);
+
+            $nomiGiocatori = array(
+                "fiori" => $nomiGiocatori->fiori,
+                "cuori" => $nomiGiocatori->cuori,
+                "quadri" => $nomiGiocatori->quadri,
+                "picche" => $nomiGiocatori->picche
+            );
+
             $value = json_encode([
                 "carteEstratte" => $_POST["carteEstratte"],
                 "nomiGiocatori" => $nomiGiocatori
