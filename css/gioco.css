@@ -56,7 +56,7 @@ body{
 
 #gioco > img{
     position: absolute;
-    top: 105%;
+    bottom: -22%;
     left: 10%;
     transition: top 1s;
 }
