@@ -43,6 +43,8 @@
             "nomiGiocatori" => $nomiGiocatori,
             "stiliGiocatori" => $stiliGiocatori
         ]);
+
+        $carteEstratte = array();
     } else {
         /* CODICE DA ESEGUIRE TUTTE LE VOLTE CHE LA PAGINA VIENE APERTA */
         /* tranne la prima volta */
@@ -67,7 +69,12 @@
             "nomiGiocatori" => $nomiGiocatori,
             "stiliGiocatori" => $stiliGiocatori
         ]);
+
+        $carteEstratte = json_decode($_POST["carteEstratte"]    );
     }
+    
+    var_dump(count($carteEstratte));
+    var_dump(end($carteEstratte));
     ?>
     <main>
         <section id="colonna">
@@ -78,8 +85,8 @@
             <img src="./img/dorso.JPG">
         </section>
         <section id="gioco">
-            <img src="./img/bg_c1.gif" id="fiori" style=bottom:<?= $stiliGiocatori["fiori"] . "%" ?>>
-            <img src="./img/bg_h1.gif" id="cuori" style=bottom:<?= $stiliGiocatori["cuori"] . "%" ?>>
+            <img src="./img/bg_c1.gif" id="fiori"  style=bottom:<?= $stiliGiocatori["fiori"]  . "%" ?>>
+            <img src="./img/bg_h1.gif" id="cuori"  style=bottom:<?= $stiliGiocatori["cuori"]  . "%" ?>>
             <img src="./img/bg_d1.gif" id="quadri" style=bottom:<?= $stiliGiocatori["quadri"] . "%" ?>>
             <img src="./img/bg_s1.gif" id="picche" style=bottom:<?= $stiliGiocatori["picche"] . "%" ?>>
         </section>
@@ -88,7 +95,11 @@
     <form action="./genera.php" method="POST">
         <button id="mazzo" name="data" value=<?= $value ?>></button>
     </form>
-    <img id="scoperta" src="./img/bg_s1.gif">
+    <img id="scoperta" src="./img/<?php
+    if (count($carteEstratte) == 0)
+        echo "dorso.JPG";
+    else echo end($carteEstratte) . ".gif";
+    ?>">
 
     <div id="giocatori">
         <div>
