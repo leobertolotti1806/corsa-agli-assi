@@ -1,65 +1,68 @@
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    margin: 0;
-    background-color: beige;
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100vh;
+	margin: 0;
+	background-color: beige;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    height: 400px;
-    padding: 30px;
-    border: 5px black solid;
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	height: 400px;
+	padding: 30px;
+	border: 5px black solid;
 }
 
-form > section{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+form > section {
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
 }
 
-#btnInvia{
-    background-color: yellow;
-    border: 2px black solid;
-    border-radius: 15px;
-    cursor: pointer;
-    animation: pulse alternate-reverse infinite ease-in-out 2s;
-    font-size: 20px;
-    padding: 5px 25px;
-    box-shadow: 0px 0px 10px black;
+#btnInvia {
+	background-color: yellow;
+	border: 2px black solid;
+	border-radius: 15px;
+	cursor: pointer;
+	animation: pulse alternate-reverse infinite ease-in-out 2s;
+	font-size: 20px;
+	padding: 5px 25px;
+	box-shadow: 0px 0px 10px black;
 }
 
-#btnInvia:hover{
-    animation-play-state: paused;
+#btnInvia:hover {
+	animation-play-state: paused;
 }
 
-input{
-    border: 2px black solid;
-    border-radius: 15px;
-    height: 30px;
-    padding-left: 10px;
+input {
+	border: 2px black solid;
+	border-radius: 15px;
+	height: 30px;
+	padding-left: 10px;
 }
 
-img{
-    border: 3px black solid;
-    border-radius: 10px;
+img {
+	border: 3px black solid;
+	border-radius: 10px;
 }
 
-form > section > div{
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;    
-
+form > section > div {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
 }
 
 @keyframes pulse {
-    from{transform: scale(1);}
-    to{transform: scale(1.3);}
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.3);
+	}
 }
