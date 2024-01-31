@@ -19,7 +19,7 @@ form {
 	border: 5px black solid;
 }
 
-form > section {
+form>section {
 	display: flex;
 	width: 100%;
 	justify-content: space-evenly;
@@ -52,7 +52,7 @@ img {
 	border-radius: 10px;
 }
 
-form > section > div {
+form>section>div {
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
@@ -62,6 +62,7 @@ form > section > div {
 	from {
 		transform: scale(1);
 	}
+
 	to {
 		transform: scale(1.3);
 	}
